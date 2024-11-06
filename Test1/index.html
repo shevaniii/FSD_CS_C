@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+
+            background-color:rgb(150, 145, 150) ;
+        }
+        .main-container{
+            background-color: white;
+            width: 500px;
+            height: 300px;
+            box-shadow: inset;
+
+            /* border: 2px solid red; */
+            border-radius: 10px ; 
+            margin: 150px auto;
+        }
+        .heading{
+            padding-top: 10px;
+            margin: 50px auto;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            font-weight: bold;
+      
+        }
+        .joke-box{
+            padding-top: 30px;
+            padding: 2px;
+            margin:auto;
+            background-color: rgb(147, 144, 144);
+            border-radius: 4px;
+            width: 60%;
+            height: 50%;
+            justify-content: space-between;   
+        }
+        .get-joke{
+            cursor: pointer;
+            color: white;
+            background-color: rgb(39, 180, 39);
+            margin: auto 30px;
+        }
+        
+        #clear-joke{
+            cursor: pointer;
+            color: white;
+            background-color: rgb(189, 34, 34);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="heading " align="center" >Random Code Generator</h1>
+       <div class="joke-box">
+         <p id="joke" align="center">Press the button for a joke</p>
+         <p align="center">character count :<span id="count">0</span></p>
+         <button class="get-joke" onclick= "getJoke()">Get joke</button>
+         <button id="clear-joke" onclick="clrJoke()">clear joke</button>
+       </div>
+
+    </div>
+    <script>
+     
+        let api = "https://v2.jokeapi.dev/joke/Any"
+
+        function getJoke() {
+            fetch(api).then((response) => {
+                data = response.json();
+                return data;
+            }).then((data) => {
+                document.getElementById("joke").innerHTML = data.setup;
+                document.getElementById("count").innerHTML = data.setup.length;
+            })
+        }
+        function clrJoke() {
+            document.getElementById("joke").innerHTML = "Press the button for a joke";
+            document.getElementById("count").innerHTML =0 ;
+        }
+    
+    </script>
+</body>
+</html>
