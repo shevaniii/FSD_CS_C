@@ -1,0 +1,28 @@
+body{
+background-color: rgb(165, 32, 237);
+color: white ;
+}
+#heading{
+    color: black;
+    font-style: italic;
+    align-items: center;
+    font-size: bold;
+}
+.fetch-btn{
+    background-color: orangered;
+    /* color: white; */
+    border-radius: 2px solid orange;
+}
+#top{
+ background-image: linear-gradient(yellow ,red);
+ border: 2px solid white;
+ width:20%;
+}
+#h1{
+    color: rgba(14, 208, 147, 0.552);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+#a{
+    color: blue;
+}
